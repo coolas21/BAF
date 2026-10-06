@@ -58,3 +58,4 @@ Correlation ID: 0a1d1979-1c48-4296-a8c0-b4b43e9e36a3
 - Does the site require login (SSO/MFA)? Is it behind iframes/popups? yes, i have to sign in first, but it still does not work
 - Is there any API, export, or database behind the pilot data (Excel, SQL, etc.)? yes
 - How are cards sent (site form, email, print)? from site, must have browser control
+- This task will not load: PAD.BrowserNativeMessageHost.exe
