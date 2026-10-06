@@ -1,61 +1,177 @@
-# Environment details (fill in what you know)
 
-## Failure
-- Exact error message text (copy from the flow run / Errors pane):Correlation Id: 929ddf65-d8b4-4575-871b-4cd08e8482e8
 
-Could not connect to the web extension's native message host within the remaining timeout period (58 seconds).: Microsoft.Flow.RPA.Desktop.Modules.SDK.Extended.Exceptions.InternalActionException: Failed to assume control of Microsoft Edge (communication with Power Automate web extension failed) ---> Microsoft.Flow.RPA.Desktop.UIAutomation.WebAutomation.Core.WebExtensionsBrowser.WebExtensionHostNotAvailableException: Could not connect to the web extension's native message host within the remaining timeout period (58 seconds). ---> System.TimeoutException: The operation has timed out.
-   at Microsoft.Flow.RPA.Desktop.UIAutomation.Shared.Rpc.NamedPipesRpcPeer.CreatePipeStream(String pipeName, Boolean isServer, TimeSpan connectTimeout, Int32 bufferSize, CancellationToken cancellationToken)
-   at Microsoft.Flow.RPA.Desktop.UIAutomation.Shared.Rpc.NamedPipesRpcPeer..ctor(String pipeName, RpcInterfaceRegistar interfaceRegistar, Boolean isServer, TimeSpan connectTimeout, TimeSpan callTimeout, Int32 bufferSize, ILogger`1 logger, IStreamValidator streamValidator, CancellationToken cancellationToken)
-   at Microsoft.Flow.RPA.Desktop.UIAutomation.Shared.Rpc.NamedPipesRpcPeer.ConnectAsClient(String pipeName, RpcInterfaceRegistar interfaceRegistar, ILogger`1 logger, Nullable`1 connectTimeout, Nullable`1 callTimeout, IStreamValidator streamValidator, CancellationToken cancellationToken)
-   at Microsoft.Flow.RPA.Desktop.UIAutomation.WebAutomation.Core.WebExtensionsBrowser.Communication.RpcWebExtensionsProxy.Connect()
-   --- End of inner exception stack trace ---
-   at Microsoft.Flow.RPA.Desktop.UIAutomation.Core.Abstractions.ServiceRouter`1.Invoke(MethodInfo targetMethod, Object[] args)
-   at generatedProxy_6.LaunchNewEdge(AutomationRoute, String, String, String, String, LaunchNewEdgeMode, LaunchWindowState, AttachMode, MatchMode, Boolean, TimeSpan, WebPageCourseOfActionIfDialogAppears, Boolean, Boolean, TimeSpan, PiPUserDataFolderMode, String, Boolean, WebAutomationCommunicationMethod, Dictionary`2)
-   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
-   at System.Reflection.MethodBaseInvoker.InvokeWithManyArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
---- End of remote exception stack trace ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at Microsoft.Flow.RPA.Desktop.UIAutomation.Shared.Rpc.RpcDispatchProxy`1.GetRemoteResultOrThrow(ISerializer serializer, RPCMessage response, Type expectedResultType, Object additionalContext)
-   at Microsoft.Flow.RPA.Desktop.UIAutomation.Shared.Rpc.RpcDispatchProxy`1.Invoke(MethodInfo targetMethod, Object[] args)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Reflection.DispatchProxyGenerator.Invoke(Object[] args)
-   at generatedProxy_2.LaunchNewEdge(AutomationRoute , String , String , String , String , LaunchNewEdgeMode , LaunchWindowState , AttachMode , MatchMode , Boolean , TimeSpan , WebPageCourseOfActionIfDialogAppears , Boolean , Boolean , TimeSpan , PiPUserDataFolderMode , String , Boolean , WebAutomationCommunicationMethod , Dictionary`2 )
-   at Microsoft.Flow.RPA.Desktop.Modules.WebAutomation.Common.WebAutomationRuntimeServiceProxy.<>c__DisplayClass26_0.<LaunchNewEdge>b__0(IWebAutomationRuntime s)
-   at Microsoft.Flow.RPA.Desktop.Modules.WebAutomation.Common.WebAutomationRuntimeServiceProxy.ExecuteSafe[T](Func`2 action, TimeSpan timeout)
-   at Microsoft.Flow.RPA.Desktop.Modules.WebAutomation.Common.WebAutomationRuntimeServiceProxy.LaunchNewEdge(AutomationRoute route, String initialUrl, String edgeTabTitle, String edgeTabUrl, String dialogButtonToPress, LaunchNewEdgeMode operation, LaunchWindowState windowState, AttachMode attachMode, MatchMode matchMode, Boolean waitForWebPageToLoad, TimeSpan waitForPageToLoadTimeout, WebPageCourseOfActionIfDialogAppears courseOfActionIfDialogAppears, Boolean clearCache, Boolean clearCookies, TimeSpan timeout, PiPUserDataFolderMode pipUserDataFolderMode, String pipUserDataFolderPath, Boolean runInPip, WebAutomationCommunicationMethod communicationMode, Dictionary`2 webDriverSessions)
-   at Microsoft.Flow.RPA.Desktop.Modules.WebAutomation.Actions.LaunchEdgeBase.<>c__DisplayClass83_0.<Execute>b__0(IWebAutomationRuntime s)
-   at Microsoft.Flow.RPA.Desktop.Modules.WebAutomation.Actions.WebAutomationActionBase.PerformWebAutomationWithLogging[T](Func`2 action, WebAutomationRuntimeLogData requestData, Func`3 resultData)
-   at Microsoft.Flow.RPA.Desktop.Modules.WebAutomation.Actions.LaunchEdgeBase.Execute(ActionContext context)
-   --- End of inner exception stack trace ---
-   at Microsoft.Flow.RPA.Desktop.Modules.WebAutomation.Actions.LaunchEdgeBase.Execute(ActionContext context)
-   at Microsoft.Flow.RPA.Desktop.Robin.Engine.Execution.ActionRunner.Run(IActionStatement statement, Dictionary`2 inputArguments, Dictionary`2 outputArguments, Guid actionExecutionId)
-- Which action fails (e.g. "Launch new Chrome", "Click link on web page"):
-- Does it fail every run, or only unattended / scheduled runs?
-- Did it ever work? When did it stop? Anything change then (Windows update,
-  browser update, PAD update, new PC, password change)? It did work, not really sure when it wuit but it has been a few months
+Luke Grout
 
-## Browser
-- Browser used (Edge / Chrome / Firefox) and version:Edge
-- Extension installed: (Power Automate extension for Edge/Chrome) - enabled? yes
-- Extension allowed in InPrivate/Incognito? dont know
-- Browser launched by flow with a profile / user data folder? dont know
-- Does the browser window open to the right page but the flow says it can't find it? yes
+Work IQ
 
-## Power Automate Desktop
-- PAD version:Version: 11.2609.183.0
-Component: Console
-Client ID: F3BEA98F02DF476CB1BF57B7A79C5DCA
-Session ID: 64584351-7e9f-4595-a102-3ca1f7dbe31b
-Correlation ID: 0a1d1979-1c48-4296-a8c0-b4b43e9e36a3
+Auto
 
-- Licence (free / Premium / per-user / attended / unattended):
-- How is the flow triggered (manual, scheduled Task Scheduler, cloud flow)? manual
-- Is the PC signed in and unlocked when it runs? Remote Desktop used? yes
-- Is PAD running as admin, or the browser running as admin? no
 
-## Website
-- Does the site require login (SSO/MFA)? Is it behind iframes/popups? yes, i have to sign in first, but it still does not work
-- Is there any API, export, or database behind the pilot data (Excel, SQL, etc.)? yes
-- How are cards sent (site form, email, print)? from site, must have browser control
-- This task will not load: PAD.BrowserNativeMessageHost.exe
+You said:
+it immediatly returned to the prompt, and did not show up in task manager
+Copilot said:
+That result is not proof the EXE is broken. Native messaging hosts are designed to communicate with Edge through stdin/stdout, so launching the EXE manually without Edge providing that communication can reasonably result in the process exiting. Microsoft documents that Edge normally starts the host and communicates with it using stdio. Native messaging - Microsoft Edge Developer documentation
+microsoft
+
+There is one check I think we've missed, and it's a good one.
+
+Check the actual Edge extension ID
+Your PAD.ChromiumManifest.json permits these Edge IDs:
+
+
+
+
+Plain Text
+kagpabjoboikccfdghpdlaaopmgpgfdc   ← Edge production
+imdakehokbgfjhopgeipbokicjpnbipl   ← Edge development
+Microsoft says the native host's allowed_origins must contain the ID of the extension trying to communicate with it.
+microsoft
+
+Open:
+
+
+
+Plain Text
+edge://extensions/
+Make sure Developer mode is ON.
+Find Microsoft Power Automate.
+Look for ID underneath the extension.
+Compare it to:
+
+
+
+Plain Text
+kagpabjoboikccfdghpdlaaopmgpgfdc
+If the ID is different, paste the ID here. That would be a very meaningful finding because the manifest you pasted only allows the four IDs listed inside it.
+
+
+
+
+
+Favicon type
+Sources
+You said:
+same
+Copilot said:
+Good. That eliminates an extension-ID mismatch too.
+
+At this point, I don't think anything is incorrectly installed. We have verified the entire Edge native-messaging chain, and Edge is specifically failing when it attempts to launch the host.
+
+The manual-launch behavior does not prove the EXE is failing, because native messaging hosts use stdin/stdout to communicate with Edge and may exit when launched without that connection. Native messaging - Microsoft Edge Developer documentation
+microsoft
+
+My conclusion
+The strongest evidence now is:
+
+Power Automate extension: installed/enabled
+Extension ID: matches allowed_origins
+com.microsoft.pad.messagehost: registered
+PAD.ChromiumManifest.json: exists
+PAD.BrowserNativeMessageHost.exe: exists
+cmd.exe: works
+ComSpec: correct
+Edge native-messaging policies we checked: not configured
+Duplicate MSI installation: not found
+Edge service worker: Failed to start native messaging host
+PAD.BrowserNativeMessageHost.exe: never starts
+So something is preventing Edge from successfully starting that native host.
+
+The company-managed SentinelOne component is a reasonable thing for IT/security to investigate, but we have not proven it is the cause, and I would not disable it yourself.
+
+What I'd send IT
+Microsoft Power Automate Desktop web automation stopped communicating with Edge.
+
+The Microsoft Power Automate Edge extension is installed and enabled. Its extension ID matches the allowed Edge production ID in the PAD native messaging manifest.
+
+The extension's service-worker console continuously reports:
+
+Unchecked runtime.lastError: Failed to start native messaging host.
+
+Native host: com.microsoft.pad.messagehost
+
+Executable: PAD.BrowserNativeMessageHost.exe
+
+The native-messaging registry registration, PAD.ChromiumManifest.json, and PAD.BrowserNativeMessageHost.exe have all been verified as present, but PAD.BrowserNativeMessageHost.exe never starts when Edge attempts the connection.
+
+Please check endpoint/security controls, including SentinelOne, for anything blocking Microsoft Edge from launching the Power Automate native messaging host.
+
+That's much more actionable for IT than simply reporting "PAD can't control Edge."
+
+
+
+
+
+Favicon type
+Sources
+You said:
+could we just make this run in chrome?
+Copilot said:
+Yes. Chrome is absolutely worth trying, and PAD officially supports Google Chrome for browser automation. It can use either the Power Automate browser extension or WebDriver. Browser automation actions reference
+microsoft
+
+Given the problem we've isolated in Edge, Chrome is also a useful test because it tells us whether this is Edge-specific or whether the native messaging host is being blocked system-wide.
+
+Step 1: Install the PAD Chrome extension
+In Power Automate Desktop:
+
+Open your flow.
+Select Tools → Browser extensions.
+Choose Google Chrome.
+Let PAD take you through installing Microsoft Power Automate for Chrome.
+In Chrome, open:
+
+
+
+Plain Text
+chrome://extensions/
+Verify Microsoft Power Automate is present and enabled.
+Microsoft specifically supports installing the Chrome extension from PAD's Tools → Browser extensions menu. Install Power Automate browser extensions
+microsoft
+
+Step 2: Don't modify your big flow yet
+Let's prove Chrome communication works first.
+
+Once the extension is installed:
+
+Completely close Chrome.
+Reopen Chrome.
+Open Task Manager → Details.
+Look for:
+
+
+
+Plain Text
+PAD.BrowserNativeMessageHost.exe
+Microsoft says one instance of that process runs for each browser type when the extension/native-host connection is functioning. Troubleshoot Browser Extension Errors in Desktop Flows
+microsoft
+
+What this test tells us
+If PAD.BrowserNativeMessageHost.exe appears with Chrome: excellent. That strongly points us toward the Edge side of the setup, and we can start converting your flow to use Launch new Chrome. PAD provides separate launch actions for Edge and Chrome.
+microsoft
++1
+
+If it still does not appear with Chrome: don't bother converting the flow yet. Chrome also depends on the Power Automate browser integration, so we'd likely still have the underlying native-host communication issue.
+microsoft
+
+I'd do only that first. Install the Chrome extension, open Chrome, and check Task Manager for PAD.BrowserNativeMessageHost.exe.
+
+
+
+
+
+
+Favicon type
+Sources
+
+Walk me through installing the Chrome extension
+
+Help me test whether PAD connects to Chrome
+
+
+
+Message Copilot
+
+
+
+
+AI-generated content may be incorrect
